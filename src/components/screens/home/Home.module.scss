@@ -1,0 +1,51 @@
+@import "../../../assets/styles";
+
+.wrapper {
+  @include flex-alignment(flex-start, center, 0, column);
+
+  padding: $p-4;
+  min-height: $h-screen;
+  background-color: $primary;
+  color: $black;
+
+  @media (min-width: 768px) {
+    padding: $p-8;
+  }
+
+  & > .heading {
+    font-size: $text-2xl;
+    font-weight: $font-semibold;
+    line-height: $leading-m;
+    text-align: center;
+    margin-bottom: $p-4;
+
+    @media (min-width: 768px) {
+      font-size: $text-3xl;
+    }
+  }
+
+  & > .description {
+    font-size: $text-m;
+    font-weight: $font-regular;
+    line-height: $leading-s;
+    text-align: center;
+    max-width: $w-3-4;
+
+    @media (min-width: 768px) {
+      font-size: $text-l;
+      margin-bottom: $p-8;
+    }
+  }
+
+  & > .container {
+    @include flex-alignment(center, center, 2rem, column);
+
+    width: $w-full;
+    max-width: $w-3-4;
+    margin-top: $p-12;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+}

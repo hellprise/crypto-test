@@ -1,0 +1,17 @@
+@mixin flex-direction($direction: column) {
+	display: flex;
+	flex-direction: $direction;
+}
+
+@mixin flex-items($align-items: center) {
+	display: flex;
+	align-items: $align-items;
+}
+
+@mixin flex-alignment($justify-content: center, $align-items: center, $gap: 0, $direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	gap: $gap;
+}

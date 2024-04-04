@@ -1,0 +1,68 @@
+@import "../../../assets/styles";
+
+.wrapper {
+  @include flex-items(flex-end);
+
+  padding: $p-6;
+  background-color: $secondary;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  opacity: $opacity-0;
+
+  @media (min-width: 768px) {
+    padding: $p-8;
+  }
+
+  &__visible {
+    transform: translateX(50px);
+    animation: slideInRight 1.5s forwards;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.1s * $i;
+      }
+    }
+  }
+
+  & > .currency {
+    font-size: $text-xl;
+    font-weight: $font-bold;
+    margin-right: $p-1;
+  }
+
+  & > .content {
+    @include flex-alignment(flex-start, flex-end, 0, column);
+
+    & > .action {
+      @include flex-items();
+
+      font-size: $text-s;
+      font-weight: $font-bold;
+      line-height: $leading-m;
+
+      &__up {
+        color: $green;
+      }
+      &__down {
+        color: $red;
+      }
+
+      & > .price {
+        font-size: $text-m;
+        font-weight: $font-semibold;
+      }
+    }
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(50px);
+    opacity: $opacity-0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: $opacity-1;
+  }
+}
